@@ -11,8 +11,12 @@ async def handler(event):
     print("New message:", event.text)
 
 async def main():
-    await client.start()
-    print("Bot is running...")
+    try:
+        await client.start()
+        print("Bot is running...")
+    except Exception as e:
+        print("ERROR:", e)
+
     await asyncio.Event().wait()
 
 asyncio.run(main())

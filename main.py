@@ -13,8 +13,6 @@ async def handler(event):
 async def main():
     await client.start()
     print("Bot is running...")
-
-    # 👇 هذا أهم سطر (يمنع الإغلاق)
     await asyncio.Event().wait()
 
 asyncio.run(main())
